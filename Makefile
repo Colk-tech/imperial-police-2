@@ -53,4 +53,4 @@ pytest_xml:
 
 .PHONY: pytest_ci
 pytest_ci:
-	docker compose run --rm python bash -c "python run_command.py rye run pytest -v ./test/ --cov --junitxml=pytest.xml --cov-report=term-missing:skip-covered | tee pytest-coverage.txt"
+	docker compose run --rm python bash -c "python run_command.py rye run pytest -v ./test/ --cov=./src/ --cov-report=xml --cov-report=term-missing:skip-covered --junitxml=pytest.xml"
